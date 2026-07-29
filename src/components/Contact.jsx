@@ -1,137 +1,66 @@
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, ExternalLink } from 'lucide-react';
 import { FaWhatsapp, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function Contact() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Nanti bisa disambungkan ke EmailJS atau Formspree di sini
-    alert('Terima kasih! Pesan kamu berhasil dikirim.');
-  };
+  const waMessage = encodeURIComponent("Hello Ade, I saw your portfolio and would like to connect.");
+  const waLink = `https://wa.me/6283827435164?text=${waMessage}`;
+
+  const contacts = [
+    { label: 'WHATSAPP', val: '+62 838-2743-5164', link: waLink, icon: <FaWhatsapp className="w-4 h-4" /> },
+    { label: 'EMAIL', val: 'dermawan290804@gmail.com', link: 'mailto:dermawan290804@gmail.com', icon: <Mail className="w-4 h-4" /> },
+    { label: 'GITHUB', val: 'github.com', link: 'https://github.com', icon: <FaGithub className="w-4 h-4" /> },
+    { label: 'LINKEDIN', val: 'linkedin.com', link: 'https://linkedin.com', icon: <FaLinkedin className="w-4 h-4" /> },
+  ];
 
   return (
-    <section id="contact" className="py-24 px-6 relative max-w-6xl mx-auto">
-      
-      {/* Title */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
-          Hubungi <span className="text-cyan-400">Saya</span>
-        </h2>
-        <p className="text-slate-400 text-sm max-w-lg mx-auto mb-3">
-          Punya tawaran project, diskusi teknis, atau mau sekadar bertegur sapa? Kirim pesan langsung di bawah ini!
-        </p>
-        <div className="w-16 h-1 bg-cyan-500 mx-auto rounded-full" />
-      </motion.div>
-
-      <div className="grid md:grid-cols-12 gap-8 items-start">
+    <section 
+      id="contact" 
+      className="bg-[#fbf9f5] text-black font-serif px-4 md:px-12 py-10 border-b-2 border-black scroll-mt-16 min-h-[calc(100vh-70px)] flex flex-col justify-center"
+    >
+      <div className="max-w-4xl mx-auto w-full">
         
-        {/* Left Side: Info Cards */}
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="md:col-span-5 space-y-4"
-        >
-          <div className="bg-slate-800/40 border border-slate-700/60 p-6 rounded-3xl backdrop-blur-sm">
-            <h3 className="text-xl font-bold text-white mb-6">Informasi Kontak</h3>
-            
-            <div className="space-y-5">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-slate-900 rounded-2xl border border-slate-700 text-cyan-400">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400 uppercase font-semibold">Email</p>
-                  <a href="mailto:emailkamu@gmail.com" className="text-sm text-slate-200 hover:text-cyan-400 transition font-medium">
-                    dermawan290804@gmail.com
-                  </a>
-                </div>
-              </div>
+        {/* Header */}
+        <div className="border-b-2 border-black pb-2 mb-8 flex justify-between items-end">
+          <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight font-serif">
+            CONTACT
+          </h2>
+          {/* <span className="font-mono text-xs text-zinc-600 hidden sm:inline uppercase">
+            DIRECTORY & CHANNELS
+          </span> */}
+        </div>
 
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-slate-900 rounded-2xl border border-slate-700 text-cyan-400">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400 uppercase font-semibold">Lokasi</p>
-                  <p className="text-sm text-slate-200 font-medium">Bandung, Jawa Barat, Indonesia</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="mt-8 pt-6 border-t border-slate-700/60">
-              <p className="text-xs uppercase tracking-wider font-semibold text-slate-400 mb-4">Sosial Media:</p>
-              <div className="flex gap-3">
-                <a href="https://github.com" target="_blank" rel="noreferrer" className="p-3 bg-slate-900 rounded-xl hover:text-cyan-400 border border-slate-700/80 transition text-slate-300">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-3 bg-slate-900 rounded-xl hover:text-cyan-400 border border-slate-700/80 transition text-slate-300">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-                <a href="https://wa.me/" target="_blank" rel="noreferrer" className="p-3 bg-slate-900 rounded-xl hover:text-cyan-400 border border-slate-700/80 transition text-slate-300">
-                  <FaWhatsapp className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+        {/* Box Utama Simpel */}
+        <div className="border-2 border-black p-6 sm:p-8 bg-white transition-all duration-300 ease-in-out hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+          
+          {/* Location */}
+          <div className="flex items-center gap-2 font-mono text-xs border-b border-black pb-4 mb-6">
+            <MapPin className="w-4 h-4 text-black shrink-0" />
+            <span className="font-bold text-zinc-500 uppercase">LOCATION:</span>
+            <span className="font-bold">Bandung, West Java, Indonesia</span>
           </div>
-        </motion.div>
 
-        {/* Right Side: Form */}
-        <motion.div 
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="md:col-span-7 bg-slate-800/40 border border-slate-700/60 p-8 rounded-3xl backdrop-blur-sm"
-        >
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">Nama Lengkap</label>
-                <input 
-                  type="text" 
-                  required
-                  placeholder="John Doe"
-                  className="w-full bg-slate-900/80 border border-slate-700/80 focus:border-cyan-400 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">Alamat Email</label>
-                <input 
-                  type="email" 
-                  required
-                  placeholder="john@example.com"
-                  className="w-full bg-slate-900/80 border border-slate-700/80 focus:border-cyan-400 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition"
-                />
-              </div>
-            </div>
+          {/* Social Links List with Invert Hover Smooth & Shift */}
+          <div className="space-y-3 font-mono text-xs">
+            {contacts.map((c, idx) => (
+              <a
+                key={idx}
+                href={c.link}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between p-3 border border-black bg-[#fbf9f5] transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:pl-5 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:scale-[0.99] group"
+              >
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="transition-transform duration-300 group-hover:scale-110">
+                    {c.icon}
+                  </div>
+                  <span className="font-bold">{c.label}</span>
+                  <span className="text-zinc-500 group-hover:text-zinc-300 hidden sm:inline">| {c.val}</span>
+                </div>
+              </a>
+            ))}
+          </div>
 
-            <div>
-              <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">Pesan</label>
-              <textarea 
-                rows="4" 
-                required
-                placeholder="Tuliskan pesan kamu di sini..."
-                className="w-full bg-slate-900/80 border border-slate-700/80 focus:border-cyan-400 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition resize-none"
-              />
-            </div>
-
-            <button 
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl transition shadow-lg shadow-cyan-500/20 active:scale-98"
-            >
-              Kirim Pesan <Send className="w-4 h-4" />
-            </button>
-          </form>
-        </motion.div>
+        </div>
 
       </div>
     </section>

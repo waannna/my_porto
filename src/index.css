@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+@layer utilities {
+  * {
+    @apply transition-none;
+  }
+}
+
+/* Memastikan pergerakan smooth untuk properti transform & shadow */
+.smooth-hover {
+  will-change: transform, box-shadow;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
