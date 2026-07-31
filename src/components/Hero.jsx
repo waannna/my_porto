@@ -11,8 +11,24 @@ export default function Hero() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-          {/* Left Column */}
-          <div className="lg:col-span-7 flex flex-col justify-between font-serif text-sm sm:text-base leading-relaxed text-zinc-900">
+          {/* Kolom Gambar: Set order-1 untuk HP, dan lg:order-2 untuk Desktop */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center order-1 lg:order-2">
+            <div className="border-2 border-black p-2 bg-white w-full max-w-md transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] group">
+              <div className="overflow-hidden border border-black">
+                <img
+                  src={profileImg}
+                  alt="Ade Dermawan"
+                  className="w-full h-[280px] sm:h-[360px] object-cover object-center grayscale contrast-125 transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
+                />
+              </div>
+              <div className="mt-2 text-center font-mono text-[11px] text-zinc-700 uppercase tracking-tighter">
+                Fig. 1.0 — Ade Dermawan
+              </div>
+            </div>
+          </div>
+
+          {/* Kolom Teks: Set order-2 untuk HP, dan lg:order-1 untuk Desktop */}
+          <div className="lg:col-span-7 flex flex-col justify-between font-serif text-sm sm:text-base leading-relaxed text-zinc-900 order-2 lg:order-1">
             <div className="space-y-4">
               <p className="leading-relaxed">
                 <span className="float-left text-5xl font-black leading-none mr-2 font-serif">
@@ -30,7 +46,7 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Action Callout Box with Hover Smooth */}
+            {/* Action Callout Box */}
             <div className="mt-8 p-4 border-2 border-black bg-[#f0ece1] font-mono text-xs flex flex-wrap items-center justify-between gap-4 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <div>
                 <span className="font-bold block">CURRENT STATUS:</span>
@@ -41,24 +57,8 @@ export default function Hero() {
                 href="#projects"
                 className="bg-black text-white hover:bg-zinc-800 active:scale-95 px-4 py-2 font-bold flex items-center gap-1 uppercase transition-all duration-200 ease-in-out"
               >
-                View My Projects <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                View My Projects <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
-            </div>
-          </div>
-
-          {/* Right Column (Frame Foto dengan Hover Smooth) */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center">
-            <div className="border-2 border-black p-2 bg-white w-full max-w-md transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] group">
-              <div className="overflow-hidden border border-black">
-                <img
-                  src={profileImg}
-                  alt="Ade Dermawan"
-                  className="w-full h-[320px] sm:h-[360px] object-cover object-center grayscale contrast-125 transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
-                />
-              </div>
-              <div className="mt-2 text-center font-mono text-[11px] text-zinc-700 uppercase tracking-tighter">
-                Fig. 1.0 — Ade Dermawan
-              </div>
             </div>
           </div>
 
