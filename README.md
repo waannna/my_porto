@@ -1,6 +1,5 @@
 #  The Digital Chronicle — Ade Dermawan Personal Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://ade-dermawn-porto.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ade%20Dermawan-0077b5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ade-dermawan-6a566a409/)
 [![GitHub](https://img.shields.io/badge/GitHub-waannna-181717?style=for-the-badge&logo=github)](https://github.com/waannna)
 [![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20Tailwind%20%7C%20Spring%20Boot%20%7C%20Node.js-black?style=for-the-badge)](https://github.com/waannna/my_porto)
