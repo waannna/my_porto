@@ -1,0 +1,80 @@
+export const initialProjects = [
+  {
+    id: 'patunganyuk',
+    title: 'PATUNGANYUK',
+    category: 'FULLSTACK & SPRING BOOT',
+    iconType: 'receipt',
+    desc: "Full-stack group expense sharing and split-bill web platform with automatic 'Who Owes Whom' debt settlements, thermal-styled digital receipts, financial analytics, and an admin console.",
+    tech: ['React 19', 'Java 17', 'Spring Boot', 'PostgreSQL', 'Tailwind CSS', 'REST API'],
+    github: 'https://github.com/waannna/PatunganYuk',
+    demo: '#',
+    caseStudy: {
+      role: 'Fullstack Developer (Personal Project — React & Java Spring Boot 2026)',
+      overview: 'PatunganYuk was engineered to solve the complex coordination and friction of shared finances in social groups (trips, room sharing, collective gifts). It tracks joint expenses, calculates fair split shares, and models debt settlements to minimize the total transactions required.',
+      highlights: [
+        'Layered Backend Architecture: Implemented clean controller–service–repository pattern using Java 17, Spring Boot, Spring Data JPA, and PostgreSQL.',
+        'Who Owes Whom Algorithm: Implemented debt simplification logic that pairs maximum creditors with maximum debtors to reduce redundant peer-to-peer transfers.',
+        'Digital Thermal Receipt: Real-time receipt generator replicating authentic thermal POS paper with instant print capability.',
+        'Financial Analytics & Dashboard: 6-month transaction trends, donut expense distribution charts, and personal net balance tracking.',
+        'Admin Console & System Monitoring: Dedicated administrative portal with user management, system turnover metrics, and issue resolution tracking.',
+      ],
+      stackDetails: {
+        frontend: 'React 19, Vite, Tailwind CSS v4, Lucide React, React Router DOM',
+        backend: 'Java 17, Spring Boot, Spring Web, Spring Data JPA, Maven',
+        database: 'PostgreSQL / Supabase (Hibernate DDL Auto)',
+        security: 'SHA-256 password hashing, strict CORS origin controls, centralized GlobalExceptionHandler',
+      },
+    },
+  },
+  {
+    id: 'nexusbrew',
+    title: 'NEXUSBREW',
+    category: 'WEB APP & ORDERING SYSTEM',
+    iconType: 'coffee',
+    desc: "Online cafe ordering platform enabling remote menu browsing and orders. Features JWT authentication with role-based access control for customers, cafe staff, and administrators.",
+    tech: ['React.js', 'Node.js', 'PostgreSQL', 'Express.js', 'JWT Auth'],
+    github: 'https://github.com/waannna/nexus_brew',
+    demo: '#',
+    caseStudy: {
+      role: 'Fullstack Developer (Personal Project)',
+      overview: 'NexusBrew is a modern online ordering platform designed to streamline cafe table operations. Customers can browse dynamic categorized menus, customize item variants, and place direct orders that are delivered on-premise by cafe staff.',
+      highlights: [
+        'JWT Role-Based Access Control (RBAC): Built authenticated workflows distinguishing between Customers, Cafe Baristas/Staff, and System Administrators.',
+        'Interactive Menu & Cart: Real-time price calculation with addon customization, item quantities, and instant order state management.',
+        'Relational Database Design: Structured PostgreSQL schema for categories, menu items, order items, and audit timestamps.',
+      ],
+      stackDetails: {
+        frontend: 'React.js, Tailwind CSS, JavaScript (ES6+)',
+        backend: 'Node.js, Express.js, REST API',
+        database: 'PostgreSQL',
+        security: 'JSON Web Token (JWT), Password Hashing, Role-Based Route Guards',
+      },
+    },
+  },
+  
+  {
+    id: 'counsela',
+    title: 'COUNSELA',
+    category: 'LEGAL TECH & SCHEDULING',
+    iconType: 'scale',
+    desc: "Legal consultation booking platform with dedicated interactive dashboards for attorneys and clients, automated consultation scheduling, and instant status notifications.",
+    tech: ['Vue.js', 'Node.js', 'PostgreSQL', 'Express.js', 'Tailwind CSS'],
+    github: 'https://github.com/waannna/ade-dermawan',
+    demo: '#',
+    caseStudy: {
+      role: 'Fullstack Developer (Personal Project)',
+      overview: 'Counsela bridges clients and legal professionals through an intuitive digital booking system. It eliminates manual consultation coordination by pairing lawyer availability with automated client booking calendars.',
+      highlights: [
+        'Dual Dedicated Dashboards: Independent workspace views tailored separately for legal practitioners and their clients.',
+        'Automated Appointment Engine: Interactive schedule picker preventing overlapping consultations.',
+        'Real-time Status Pipeline: Instant consultation status updates (Requested → Confirmed → Completed) with notification logs.',
+      ],
+      stackDetails: {
+        frontend: 'Vue.js, Tailwind CSS, Component Architecture',
+        backend: 'Node.js, Express.js REST API',
+        database: 'PostgreSQL',
+        tools: 'Postman, Git, DBeaver',
+      },
+    },
+  },
+];

@@ -9,6 +9,7 @@ export default function Navbar() {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
+    { id: 'timeline', label: 'Timeline' },
     { id: 'projects', label: 'Project' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -61,7 +62,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#fbf9f5]/90 backdrop-blur-md border-b-2 border-black px-4 md:px-12 py-3.5 text-black font-serif transition-all">
+    <header className="sticky top-0 z-50 bg-[#fbf9f5]/90 backdrop-blur-md border-b-2 border-black px-4 md:px-12 py-2.5 sm:py-3.5 text-black font-serif transition-all">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         
         {/* Brand Logo */}
@@ -98,7 +99,7 @@ export default function Navbar() {
         {/* Mobile Hamburger Toggle */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden font-mono text-xs font-bold flex items-center gap-1 border-2 border-black px-2.5 py-1 bg-white"
+          className="md:hidden font-mono text-xs font-bold flex items-center gap-1 border-2 border-black px-2.5 py-1 bg-white cursor-pointer"
           aria-label="Toggle Navigation"
         >
           {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -109,20 +110,21 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden border-t-2 border-black mt-3 pt-3 pb-2 font-mono text-xs uppercase tracking-wider bg-[#fbf9f5]/95 backdrop-blur-md">
-          <div className="flex flex-col gap-2 font-bold">
-            {navItems.map((item, idx) => {
+        <div className="md:hidden border-t-2 border-black mt-2.5 pt-2.5 pb-2 font-mono text-xs uppercase tracking-wider bg-[#fbf9f5]/95 backdrop-blur-md">
+          <div className="flex flex-col gap-1.5 font-bold">
+            {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <a 
                   key={item.id}
                   href={`#${item.id}`} 
                   onClick={() => setIsOpen(false)} 
-                  className={`px-2 py-1.5 border-b border-dashed border-zinc-300 flex justify-between items-center ${
+                  className={`px-3 py-2 border-b border-dashed border-zinc-300 flex justify-between items-center transition-colors active:bg-black active:text-white ${
                     isActive ? 'bg-[#f0ece1] text-black font-extrabold' : 'text-zinc-700'
                   }`}
                 >
-                  <span> {item.label}</span>
+                  <span>{item.label}</span>
+                 
                 </a>
               );
             })}
